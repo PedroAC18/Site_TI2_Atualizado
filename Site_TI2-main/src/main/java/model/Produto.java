@@ -1,36 +1,38 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-public class Produto implements Serializable {
+import org.json.JSONObject;
+
+public class Produto implements Serializable, JsonFormatter {
 	private static final long serialVersionUID = 1L;
-	public static final String DESCRICAO_PADRAO = "Novo Produto";
 	public static final int MAX_ESTOQUE = 1000;
 	private int id;
-	private String descricao;
+	private String nome;
 	private float preco;
+	private String fichaTecnica;
 	private int quantidade;
-	private LocalDateTime dataFabricacao;	
-	private LocalDate dataValidade;
+	private String categoria;
+	private String imagemUrl;
 	
 	public Produto() {
 		id = -1;
-		descricao = DESCRICAO_PADRAO;
+		nome = "";
 		preco = 0.01F;
+		fichaTecnica = "";
 		quantidade = 0;
-		dataFabricacao = LocalDateTime.now();
-		dataValidade = LocalDate.now().plusMonths(6); // o default é uma validade de 6 meses.
+		categoria = "";
+		imagemUrl = "";
 	}
 
-	public Produto(int id, String descricao, float preco, int quantidade, LocalDateTime fabricacao, LocalDate v) {
+	public Produto(int id, String nome, float preco, String fichaTecnica, int quantidade, String categoria, String imagemUrl) {
 		setId(id);
-		setDescricao(descricao);
+		setNome(nome);
 		setPreco(preco);
-		setQuant(quantidade);
-		setDataFabricacao(fabricacao);
-		setDataValidade(v);
+		setFichaTecnica(fichaTecnica);
+		setQuantidade(quantidade);
+		setCategoria(categoria);
+		setImagemUrl(imagemUrl);
 	}		
 	
 	public int getId() {
@@ -42,13 +44,12 @@ public class Produto implements Serializable {
 	}
 
 	
-	public String getDescricao() {
-		return descricao;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setDescricao(String descricao) {
-		if (descricao.length() >= 3)
-			this.descricao = descricao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public float getPreco() {
@@ -59,42 +60,50 @@ public class Produto implements Serializable {
 		if (preco > 0)
 			this.preco = preco;
 	}
+	
+	public String getFichaTecnica(){
+		return fichaTecnica;
+	}
+	
+	public void setFichaTecnica(String fichaTecnica){
+		if(fichaTecnica.length() > 3)
+			this.fichaTecnica = fichaTecnica;
+	}
 
-	public int getQuant() {
+	public int getQuantidade() {
 		return quantidade;
 	}
 	
-	public void setQuant(int quantidade) {
+	public void setQuantidade(int quantidade) {
 		if (quantidade >= 0 && quantidade <= MAX_ESTOQUE)
 			this.quantidade = quantidade;
 	}
 	
-	public LocalDate getDataValidade() {
-		return dataValidade;
+	public String getCategoria() {
+		return this.categoria;
 	}
-
-	public LocalDateTime getDataFabricacao() {
-		return dataFabricacao;
+	
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
-
-	public void setDataFabricacao(LocalDateTime dataFabricacao) {
-		// Pega a Data Atual
-		LocalDateTime agora = LocalDateTime.now();
-		// Garante que a data de fabricação não pode ser futura
-		if (agora.compareTo(dataFabricacao) >= 0)
-			this.dataFabricacao = dataFabricacao;
+	
+	public String getImagemUrl() {
+		return this.imagemUrl;
 	}
-
-	public void setDataValidade(LocalDate dataValidade) {
-		// a data de fabricação deve ser anterior é data de validade.
-		if (getDataFabricacao().isBefore(dataValidade.atStartOfDay()))
-			this.dataValidade = dataValidade;
+	
+	public void setImagemUrl(String imagemUrl) {
+		this.imagemUrl = imagemUrl;
 	}
-
-	public boolean emValidade() {
-		return LocalDateTime.now().isBefore(this.getDataValidade().atTime(23, 59));
+	
+	public void addQuantidadeBy(int quantidade) {
+		if(this.quantidade + quantidade >= 0 ) {
+			this.quantidade += quantidade;
+		}
+		else {
+			throw new RuntimeException("A quantidade nao pode ser menor que 1");
+		}
 	}
-
+	
 
 	/**
 	 * Método sobreposto da classe Object. É executado quando um objeto precisa
@@ -102,12 +111,25 @@ public class Produto implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "Produto: " + descricao + "   Preço: R$" + preco + "   Quant.: " + quantidade + "   Fabricação: "
-				+ dataFabricacao  + "   Data de Validade: " + dataValidade;
+		return id + " - " + "Produto: " + nome + "   Preço: R$" + preco + "   Quant.: " + quantidade + "   ";
 	}
 	
 	@Override
 	public boolean equals(Object obj) {
 		return (this.getId() == ((Produto) obj).getId());
+	}
+
+	@Override
+	public JSONObject toJson() {
+		JSONObject obj = new JSONObject();
+		obj.put("id", this.getId());
+		obj.put("nome", this.getNome());
+		obj.put("preco", this.getPreco());
+		obj.put("fichaTecnica", this.getFichaTecnica());
+		obj.put("quantidade", this.getQuantidade());
+		obj.put("categoria", this.getCategoria());
+		obj.put("imagemUrl", this.getImagemUrl());
+		
+		return obj;
 	}	
 }

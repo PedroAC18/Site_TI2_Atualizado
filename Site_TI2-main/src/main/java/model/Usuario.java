@@ -2,7 +2,9 @@ package model;
 
 import java.io.Serializable;
 
-public class Usuario implements Serializable {
+import org.json.JSONObject;
+
+public class Usuario implements Serializable, JsonFormatter {
 	private static final long serialVersionUID = 1L;
 	private String cpf;
 	private String nome;
@@ -89,6 +91,25 @@ public class Usuario implements Serializable {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
+	}
+	
+	@Override
+	public String toString() {
+		return "User [cpf=" + cpf + ", nome=" + nome + ", sobrenome=" + sobrenome + ", login=" + login + ", senha=" + senha
+				+ ", celular=" + celular + "]";
+	}
+	
+	@Override
+	public JSONObject toJson() {
+		JSONObject obj = new JSONObject();
+		obj.put("cpf", this.getCpf());
+		obj.put("nome", this.getNome());
+		obj.put("sobrenome", this.getSobrenome());
+		obj.put("login", this.getLogin());
+		obj.put("senha", this.getSenha());
+		obj.put("celular", this.getCelular());
+		
+		return obj;
 	}
 	
 }
