@@ -111,7 +111,15 @@ public class Usuario implements Serializable, JsonFormatter {
 		
 		return obj;
 	}
-	
+
+	@Override
+	public boolean equals(Object o) {
+		if(this.getCpf()
+				.compareTo(((Usuario) o).getCpf()) == 0)
+			return true;
+		
+		else return false;
+	}
 }
 	
 	

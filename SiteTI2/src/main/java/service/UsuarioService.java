@@ -25,14 +25,23 @@ public class UsuarioService {
 		
 		Usuario user = new Usuario(cpf, nome, sobrenome, login, senha, celular);
 		
+		
+		if(((Usuario) usuarioDAO.get(login)) != null){
+			usuarioDAO.close();
+			return "Esse email ja existe";		
+		}else if(usuarioDAO.getAll().contains(user)) {
+			usuarioDAO.close();
+			return "Esse cpf ja existe";		
+		}
+		
 		usuarioDAO.add(user);
 		
 		response.status(201); // created
-		response.redirect("../index.html");
+		//response.redirect("../index.html");
 		
 		usuarioDAO.close();
 		
-		return null;
+		return "Usuario cadastrado com sucesso!";
 	}
 	
 	// Efetuar login pelo login
@@ -40,7 +49,7 @@ public class UsuarioService {
 		usuarioDAO.connect();
 		
 		String login = request.queryParams("login");
-		System.out.println(login);
+		String senha = request.queryParams("senha");
 		
 		Usuario usuario = (Usuario) usuarioDAO.get(login);
 		
@@ -49,13 +58,19 @@ public class UsuarioService {
 		
 		response.header("Content-Type", "application/json");
 		response.header("Content-Encoding", "UTF-8");
-			
-		if (usuario != null) {
+		
+		boolean senhaCorreta = usuario.getSenha().compareTo(senha) == 0 ? true : false;
+		
+		if (usuario != null && senhaCorreta) {
 			return usuario.toJson();
-		} else {
+		} else if(!senhaCorreta){
+			response.status(403); // NOT FOUND
+			return "Senha Incorreta";
+		}
+		else {
 			response.status(404); // NOT FOUND
-			response.redirect("404.html");
-			return null;
+			//response.redirect("404.html");
+			return "Esse usuario não existe!";
 		}
 	}
 

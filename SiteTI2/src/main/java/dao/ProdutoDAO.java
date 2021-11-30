@@ -92,7 +92,7 @@ public class ProdutoDAO extends Banco implements DAO<Produto> {
 		}
 	}
 
-	@Override
+	
 	public Produto[] getAll() {
 		Produto[] produto = null;
 

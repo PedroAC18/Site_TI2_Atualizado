@@ -24,10 +24,10 @@ public class Aplicacao {
         
         //Produto
         post("/produto", (request,response) ->  produtoService.add(request, response) );
-		//get("/all/produto", (request, response) -> produtoService.getAll(request, response)); 
-		//get("/get/produto/:id", (request, response) -> produtoService.get(request, response)); 
-		//put("/update/produto/:id", (request, response) -> produtoService.update(request, response));
-		//delete("/delete/produto/:id", (request, response) -> produtoService.remove(request,response));
+		get("/all/produto", (request, response) -> produtoService.getAll(request, response)); 
+		get("/get/produto/:id", (request, response) -> produtoService.get(request, response)); 
+		put("/update/produto/:id", (request, response) -> produtoService.update(request, response));
+		delete("/delete/produto/:id", (request, response) -> produtoService.remove(request,response));
               
     }
 }

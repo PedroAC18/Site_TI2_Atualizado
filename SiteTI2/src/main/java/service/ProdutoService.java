@@ -38,11 +38,12 @@ public class ProdutoService implements Service {
 		produtoDAO.add(produto);
 
 		response.status(201); // created
-		response.redirect("../index.html");
+		//response.redirect("../index.html");
 		
 		produtoDAO.close();
 		
-		return produtoDAO.getIdMax();
+		//return produtoDAO.getIdMax();
+		return "Produto cadastrado com sucesso!";
 	}
 
 	@Override

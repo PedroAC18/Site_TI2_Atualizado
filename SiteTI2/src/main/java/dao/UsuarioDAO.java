@@ -2,6 +2,7 @@ package dao;
 
 import model.Usuario;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UsuarioDAO extends Banco implements DAO<Usuario> {
 	
@@ -132,9 +133,9 @@ public class UsuarioDAO extends Banco implements DAO<Usuario> {
 		
 	}
 
-	@Override
-	public Usuario[] getAll() {
-		Usuario[] users = null; 
+	public ArrayList<Usuario> getAll() {
+		
+		ArrayList<Usuario> users = null;  
 		
 		try {
 			Statement st = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
@@ -144,18 +145,20 @@ public class UsuarioDAO extends Banco implements DAO<Usuario> {
 			
 			if(rs.next()) {
 				rs.last();
-				users = new Usuario[rs.getRow()];
+				users = new ArrayList<Usuario>(rs.getRow());
 				rs.beforeFirst();
 				
-				for(int i = 0; rs.next(); i++) {
-					users[i] = new Usuario(
+				for(@SuppressWarnings("unused")
+				int i = 0; rs.next(); i++) {
+					users.add( new Usuario(
 							rs.getString("cpf"),
 							rs.getString("nome"), 
 						    rs.getString("sobrenome"),
 						    rs.getString("login"),
 						    rs.getString("senha"),
 						    rs.getString("celular")
-					        );
+					        )
+					);
 				}
 			}
 			st.close();
