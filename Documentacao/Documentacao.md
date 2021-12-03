@@ -39,6 +39,7 @@ Já ao fornecedor, o trabalho pode parecer mais, porém, com o grande aumento da
 
 - 	Permitir, a partir dos dados disponibilizados, a melhor opção de compra para os cidadãos.
 
+
 	1.4 Justificativas
 Considerando que muitos consumidores são enganados diariamente por lojas e páginas que dizem vender produtos originais, a equipe propôs-se a buscar soluções para que possam garantir a segurança e satisfação do consumidor, assim realizando a criação de um marketplace utilizando do conhecimentos acerca da área de desenvolvimento de software, sistemas inteligentes e banco de dados que os participantes possuem.
 
@@ -88,16 +89,22 @@ Estão listadas abaixo as tecnologias, ferramentas e ambientes utilizados para o
 -	Banco de dados: PostgreSQL;
 -	IDE web: Microsoft Visual Studio Code;
 -	Microsoft Azure como servidor em nuvem para o ChatBot;
--	QnA Maker para reunir e formular perguntas e respostas do ChatBot. (depende do nosso chatbot)
+-	QnA Maker para reunir e formular perguntas e respostas do ChatBot. (depende do nosso chatbot).
+
+
 Como citado acima, para o desenvolvimento base de nossa aplicação web foram utilizadas linguagens de front-end e back-end através do Microsoft Visual Studio Code, montando uma aplicação com diversas páginas e funcionalidades. A partir disso, foi possível integrar as informações dos usuários com o banco de dados da YAGI no PostgreSQL através da Eclipse e Maven. Além disso, foram utilizadas a plataforma Microsoft Azure como base para a criação do ChatBot.
 
+	
+	
 	3.2. Fluxo de publicação (fazer depois)
+
+Fazer ainda
 
 
 
 	3.3 Telas do sistema (fazer depois)
 
-
+Fazer ainda
 
 
 ## 4.Modelagem de Dados
