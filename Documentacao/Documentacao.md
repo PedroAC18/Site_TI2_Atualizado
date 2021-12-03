@@ -40,6 +40,7 @@ Já ao fornecedor, o trabalho pode parecer mais, porém, com o grande aumento da
 - 	Permitir, a partir dos dados disponibilizados, a melhor opção de compra para os cidadãos.
 
 
+
 	1.4 Justificativas
 
 Considerando que muitos consumidores são enganados diariamente por lojas e páginas que dizem vender produtos originais, a equipe propôs-se a buscar soluções para que possam garantir a segurança e satisfação do consumidor, assim realizando a criação de um marketplace utilizando do conhecimentos acerca da área de desenvolvimento de software, sistemas inteligentes e banco de dados que os participantes possuem.
