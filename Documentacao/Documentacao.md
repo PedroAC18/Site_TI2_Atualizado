@@ -1,8 +1,11 @@
 # YAGI – E-commerce de Sneakers
 
 **João Pedro de Castro, email**
+
 **João Victor dos Santos, joao.santos.1130758@pucminas.sga.br**
+
 **Pedro Assis Corrêa, pedro.correa1101@gmail.com**
+
 **Wyan Gauzzi, email**
 
 ---
