@@ -15,7 +15,8 @@ _Curso de Ciência da Computação, Unidade {Coração Eucarístico}_
 _Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Minas Gerais (PUC MINAS), Belo Horizonte – MG – Brasil_
 
 ---
-_ **Resumo**_
+
+_**Resumo**_ 
 _Considerando a atual situação dos e-commerces, que não garantem a autenticidade dos produtos e aplicam preços exorbitantes, foi de interesse da equipe montar um site que garanta ao consumidor que na plataforma, ele estará seguro às inseguranças citadas anteriormente. Tal processo é garantido a partir da análise de profissionais no ramo da moda, que garantirão a alta qualidade e autenticidade dos produtos disponibilizados._
 
 ---
