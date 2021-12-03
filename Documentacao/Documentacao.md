@@ -1,15 +1,17 @@
-#YAGI – E-commerce de Sneakers
+# YAGI – E-commerce de Sneakers
 
-** João Pedro de Castro, email**
-** João Victor dos Santos, email**
-** Pedro Assis Corrêa, pedro.correa1101@gmail.com**
-** Wyan Gauzzi, email**
+**João Pedro de Castro, email**
+**João Victor dos Santos, joao.santos.1130758@pucminas.sga.br**
+**Pedro Assis Corrêa, pedro.correa1101@gmail.com**
+**Wyan Gauzzi, email**
 
 ---
-_ Curso de Ciência da Computação, Unidade Coração Eucarístico _
 
-_ Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Minas Gerais (PUC MINAS), Belo Horizonte – MG – Brasil _
+_Curso de Ciência da Computação, Unidade {Coração Eucarístico}_
 
+_Instituto de Informática e Ciências Exatas – Pontifícia Universidade de Minas Gerais (PUC MINAS), Belo Horizonte – MG – Brasil_
+
+---
 _ **Resumo**_
 
 Considerando a atual situação dos e-commerces, que não garantem a autenticidade dos produtos e aplicam preços exorbitantes, foi de interesse da equipe montar um site que garanta ao consumidor que na plataforma, ele estará seguro às inseguranças citadas anteriormente. Tal processo é garantido a partir da análise de profissionais no ramo da moda, que garantirão a alta qualidade e autenticidade dos produtos disponibilizados.
@@ -27,7 +29,7 @@ Considerando a atual situação dos e-commerces, que não garantem a autenticida
 **1.3 Objetivo Geral**
 -	Frente ao problema citado, procurou-se utilizar os recursos tecnológicos à disposição para criar um ambiente online que pudesse garantir a venda segura de sneakers. Ademais, empenhar-se na tarefa de garantir a autenticidade dos produtos listados no site.
 
-- **1.3.1 Facilitar a visualização, disposição dos produtos e,respectivamente, os preços fornecidos pelos vendedores **.
+- **1.3.1 Facilitar a visualização, disposição dos produtos e,respectivamente, os preços fornecidos pelos vendedores**.
 
 - **1.3.2 Permitir, a partir dos dados disponibilizados, a melhor opção de compra para os cidadãos**.
 
@@ -54,7 +56,7 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 
 
 
-2.2. Requisitos não Funcionais
+	2.2. Requisitos não Funcionais
 
 A tabela a seguir apresenta os requisitos não funcionais do projeto e suas prioridades indicadas.
 
@@ -67,7 +69,7 @@ A tabela a seguir apresenta os requisitos não funcionais do projeto e suas prio
 
 Este tópico aborda as definições de ferramentas utilizadas pela equipe, tanto para a manutenção dos códigos e demais artefatos, quanto para a organização do time na execução das tarefas propostas pela equipe.
 
-3.1. Tecnologias e ambientes de trabalho
+	3.1. Tecnologias e ambientes de trabalho
 
 Com relação à gestão do código fonte, o grupo de desenvolvimento, após fazer suas alterações no projeto, faz a commit na branch master do repositório do GitHub. Após a confirmação de sucesso e isenção de falhas nessa commit, é feito o push para o ******(site), pelo qual será exibido o site ao usuário final.
 Estão listadas abaixo as tecnologias, ferramentas e ambientes utilizados para o desenvolvimento do projeto YAGI especificadas por finalidade e utilização:
@@ -96,7 +98,7 @@ Como citado acima, para o desenvolvimento base de nossa aplicação web foram ut
 Para o funcionamento da aplicação, foi necessário uma estrutura que comportasse os dados dos usuários e os respectivos processos pelos quais cada usuário passa até a realização da compra.
 
 
-4.1 Diagrama Pé de Galinha
+	4.1 Diagrama Pé de Galinha
 
 O diagrama abaixo ilustra a estrutura base para o funcionamento do nosso sistema. Nele podemos observar que USUÁRIO e PRODUTOS são interligados entre a entidade COMPRA_VENDA. Em que um usuário pode realizar n compras ou vendas, enquanto apenas um produto pode participar dessa relação.
 A entidade USUÁRIO é a mais genérica, possuindo a chave primária de CPF, e a partir disso, ela se subdivide em VENDEDOR, COMPRADOR ou ANALISTA, cada um com seus respectivos papéis dentro do sistema.
@@ -113,7 +115,7 @@ A entidade USUÁRIO é a mais genérica, possuindo a chave primária de CPF, e a
 
 
 
-** 6.Gerenciamento de Projeto**
+**6.Gerenciamento de Projeto**
 
 A equipe se organizou por meio da ferramenta Kaban disponibilizada na plataforma Trello.
 
@@ -124,7 +126,7 @@ Desenvolvedor: João Pedro de Castro
 Cientista de Dados: Wyan 	Gauzzi
 
 
-**7. Avaliação
+**7. Avaliação**
 
 Os registros abaixo foram efetuados após alguns usuários navegarem pela plataforma. O intuito dessa ação era medir a satisfação com o sistema e a facilidade dele:
 
