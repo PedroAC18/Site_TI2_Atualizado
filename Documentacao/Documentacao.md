@@ -41,7 +41,7 @@ _Considerando a atual situação dos e-commerces, que não garantem a autenticid
 **1.4 Justificativas**
 -	Considerando que muitos consumidores são enganados diariamente por lojas e páginas que dizem vender produtos originais, a equipe propôs-se a buscar soluções para que possam garantir a segurança e satisfação do consumidor, assim realizando a criação de um marketplace utilizando do conhecimentos acerca da área de desenvolvimento de software, sistemas inteligentes e banco de dados que os participantes possuem.
 
-## 2. Projeto da Solução**
+## 2. Projeto da Solução
 
 	2.1. Requisitos Funcionais
 
@@ -70,7 +70,8 @@ A tabela a seguir apresenta os requisitos não funcionais do projeto e suas prio
 | RNF-01	 | O site está acessível na plataforma **** 	          | Alta	        |
 | RNF-02        | O site é compatível com os principais navegadores | Alta	        | 
 | RNF-03        | O site é responsivo		         		          | Média        |  
-**3. Metodologia**
+
+## 3. Metodologia
 
 Este tópico aborda as definições de ferramentas utilizadas pela equipe, tanto para a manutenção dos códigos e demais artefatos, quanto para a organização do time na execução das tarefas propostas pela equipe.
 
