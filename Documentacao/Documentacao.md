@@ -21,7 +21,7 @@ _Considerando a atual situação dos e-commerces, que não garantem a autenticid
 
 ---
 
-## 1.Introdução
+**1.Introdução**
 **1.1 Contextualização**
 -	No país em que vivemos, o acesso a informações confiáveis é muitas vezes dificultado. Este pode ser um problema em contextos diversos, dentre eles na compra de produtos online, tendo em vista que muitos dos interessados nas compras não pesquisam o necessário para se certificar dos produtos que estão comprando.
 -	As redes sociais, desde que se tornaram de fácil acesso para grande maioria da população, se tornaram uma ótima opção para divulgação do comércio online, pois é possível atingir milhões de pessoas com apenas uma publicação. Com o advento da pandemia, ainda mais páginas desse ramo foram surgindo, porém, o preocupante é que há uma falsa afirmação de que os produtos vendidos são realmente verdadeiros, pode-se notar pela grande quantidade em estoque de produtos de difícil acesso e a grande variedade de preços de um mesmo produto.
