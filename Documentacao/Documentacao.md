@@ -105,9 +105,13 @@ Fazer ainda
 
 
 	3.3 Telas do sistema (fazer depois)
-**Tela Principal**
 ![Wireframes](IMG/index.png "Wireframes")
-Fazer ainda
+![Wireframes](IMG/produtos.png "Wireframes")
+![Wireframes](IMG/sobreNos.png "Wireframes")
+![Wireframes](IMG/contato.png "Wireframes")
+![Wireframes](IMG/entrar.png "Wireframes")
+![Wireframes](IMG/registrar.png "Wireframes")
+![Wireframes](IMG/MinhaConta.png "Wireframes")
 
 
 ## 4.Modelagem de Dados
