@@ -1,8 +1,12 @@
 package dao;
 
-import model.Usuario;
-import java.sql.*;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
+
+import model.Usuario;
 
 public class UsuarioDAO extends Banco implements DAO<Usuario> {
 	
@@ -75,13 +79,17 @@ public class UsuarioDAO extends Banco implements DAO<Usuario> {
 	}
 	
 	@Override
-	public void add(Usuario usuario) {
+	public void add(Usuario usuario) throws Exception {
+		
+		 MessageDigest m= MessageDigest.getInstance("MD5");
+		 m.update(usuario.getSenha() .getBytes(),0,usuario.getSenha() .length());
+		
 		String sql = ("INSERT into usuario (cpf, nome, sobrenome, login, senha, celular) values ("
-					    + " '" + usuario.getCpf()      + "', "
+					    + " '" + usuario.getCpf() + "', "
 					    + " '" + usuario.getNome() + "', "
-					    + " '" + usuario.getSobrenome()       + "', "
-					    + " '" + usuario.getLogin()      + "', "
-			            + " '" + usuario.getSenha()     + "', "
+					    + " '" + usuario.getSobrenome()  + "', "
+					    + " '" + usuario.getLogin()  + "', "
+			            + " '" + new BigInteger(1,m.digest()).toString(16) + "', "
 			            + " '" + usuario.getCelular()     + "');"
 			          );
 		try {

@@ -49,7 +49,6 @@
                                     <!--Sobre nós-->
                                     <li><a href="about.html"> Sobre nós </a></li>
                                     <!--Contato-->
-                                    <li><a href="contact.html"> Contato </a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -606,6 +605,18 @@
 <script src="assets/js/ajax-mail.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+    
+ <script>
+    (function () {
+        window.onload = function () {
+            new BlipChat()
+            .withAppKey('eWFnaWJvdDoxNDlmOWVjYS03NzNiLTRmNjAtYWUwYy1iMGFiMmNlNGUyMmI=')
+            .withButton({"color":"#e58e1b","icon":"https://blipmediastore.blob.core.windows.net/public-medias/Media_8c4b807c-83b8-4bd5-ac4d-f4433c58d9a3"})
+            .withCustomCommonUrl('https://wyan-da-silveira-gauzzi-4ec6s.chat.blip.ai/')
+            .build();
+        }
+    })();
+</script> 
 
 </body>
 

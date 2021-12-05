@@ -1,4 +1,6 @@
 (function($) {
+	
+		
     "use strict";
 
     /* Cart search */
@@ -481,14 +483,14 @@
     $(function() {
         sliderrange.slider({
             range: true,
-            min: 16,
-            max: 400,
+            min: 600,
+            max: 6000,
             values: [0, 300],
             slide: function(event, ui) {
-                amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
+                amountprice.val("R$" + ui.values[0] + " - $" + ui.values[1]);
             }
         });
-        amountprice.val("$" + sliderrange.slider("values", 0) +
+        amountprice.val("R$" + sliderrange.slider("values", 0) +
             " - $" + sliderrange.slider("values", 1));
     });
     
@@ -547,17 +549,7 @@
     }
     itemToggler3();
     
-    
-    /*--------------------------
-        ScrollUp
-    ---------------------------- */
-    $.scrollUp({
-        scrollText: '<i class="fa fa-angle-double-up"></i>',
-        easingType: 'linear',
-        scrollSpeed: 900,
-        animation: 'fade'
-    });
-    
+  
     
     /*--------------------------
         Isotope
@@ -816,17 +808,4 @@
     /*------ Wow Active ----*/
     new WOW().init();
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
 })(jQuery);

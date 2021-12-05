@@ -169,8 +169,8 @@
                             <div class="login-form-container">
                                 <div class="login-register-form">
                                     <form action="http://localhost:4568/usuario" method="get" id="form-get">
-                                        <input type="text" id="login" name="login" placeholder="E-mail">
-                                        <input type="password" id="senha" name="senha" placeholder="Senha">
+                                        <input type="text" id="login2" name="login" placeholder="E-mail">
+                                        <input type="password" id="senha2" name="senha" placeholder="Senha">
                                         <div class="button-box">
                                             <div class="login-toggle-btn">
                                                 <input type="checkbox">
@@ -186,7 +186,7 @@
                         <div id="lg2" class="tab-pane">
                             <div class="login-form-container">
                                 <div class="login-register-form">
-                                    <form action="http://localhost:4568/usuario" method="post" id="form-add">
+                                    <form onsubmit="onRegister()" id="form-add">
                                         <input type="text" id="cpf" name="cpf" placeholder="CPF">
                                         <input type="text" id="nome" name="nome" placeholder="Nome">
                                         <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome">
@@ -434,7 +434,32 @@
 <script src="assets/js/ajax-mail.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+<script>
+function onRegister() {
+    const cpf = document.getElementById("cpf").value;
+    const nome = document.getElementById("nome").value;
+    const sobrenome = document.getElementById("sobrenome").value;
+    const login = document.getElementById("login").value;
+    const senha = document.getElementById("senha").value;
+    const celular = document.getElementById("celular").value;
 
+ 	debugger;
+
+    $.ajax({
+       url: 'http://0.0.0.0:4568/usuario',
+       method: 'POST',
+       data: {
+          cpf,
+          nome,
+          sobrenome,
+          login,
+          senha,
+          celular
+       }
+    }).done(function() { console.log("success") })
+      .fail(function() { console.log("fail") })
+}
+</script>
 </body>
 
 </html>

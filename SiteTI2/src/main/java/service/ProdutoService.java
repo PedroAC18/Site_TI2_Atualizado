@@ -23,7 +23,7 @@ public class ProdutoService implements Service {
 		
 		int id = produtoDAO.getIdMax()+1;//Integer.parseInt(request.queryParams("id"));
 		String nome = request.queryParams("nome").trim();
-		float preco = Float.parseFloat(request.queryParams("preco"));
+		int preco = Integer.parseInt(request.queryParams("preco"));
 		String fichaTecnica = request.queryParams("fichaTecnica").trim();
 		int quantidade = 1;//Integer.parseInt(request.queryParams("quantidade"));
 		String categoria = request.queryParams("categoria").trim();
@@ -38,12 +38,11 @@ public class ProdutoService implements Service {
 		produtoDAO.add(produto);
 
 		response.status(201); // created
-		//response.redirect("../index.html");
+		response.redirect("../index.html");
 		
 		produtoDAO.close();
 		
-		//return produtoDAO.getIdMax();
-		return "Produto cadastrado com sucesso!";
+		return produtoDAO.getIdMax();
 	}
 
 	@Override
@@ -78,7 +77,7 @@ public class ProdutoService implements Service {
 
 		if (produto != null) {
 			produto.setNome(request.queryParams("nome").trim());
-			produto.setPreco(Float.parseFloat(request.queryParams("preco")));
+			produto.setPreco(Integer.parseInt(request.queryParams("preco")));
 			produto.setFichaTecnica(request.queryParams("fichaTecnica").trim());
 			produto.setQuantidade(Integer.parseInt(request.queryParams("bebidaQuantidade")));
 			produto.setCategoria(request.queryParams("categoria").trim());
@@ -128,7 +127,9 @@ public class ProdutoService implements Service {
 		for (Produto p : produtoDAO.getAll()) {
 			Produto produto = (Produto) p;
 			allProds.put(produto.toJson());
+			System.out.println(p.getNome());
 		}
+		
 
 		produtoDAO.close();
 				
